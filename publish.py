@@ -56,7 +56,7 @@ def pypi_versions(name: str) -> set[str]:
 
 
 def main() -> None:
-    pkg_name = "ai-hub-agents"
+    pkg_name = "mcp-tool-web-search"
     version = read_version()
     published = pypi_versions(pkg_name)
 
