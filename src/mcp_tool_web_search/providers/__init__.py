@@ -6,10 +6,7 @@ import importlib
 import logging
 import pkgutil
 from pathlib import Path
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from .base import SearchProvider
+from .base import SearchProvider,SearchResult
 
 logger = logging.getLogger(__name__)
 
@@ -71,3 +68,8 @@ def list_available() -> dict[str, bool]:
     """返回所有已注册 Provider 及其可用状态。"""
     _auto_scan()
     return {name: cls.is_available() for name, cls in _REGISTRY.items()}
+
+__all__ = [
+    SearchProvider,
+    SearchResult,
+]

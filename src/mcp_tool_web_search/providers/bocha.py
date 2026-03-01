@@ -1,14 +1,9 @@
-"""Bocha Web Search Provider — 博查搜索 API。"""
-
 from __future__ import annotations
-
 import logging
-import os
-
 import requests
-
 from . import register
 from .base import SearchProvider, SearchResult
+from mcp_tool_web_search.settings import settings
 
 logger = logging.getLogger(__name__)
 
@@ -20,7 +15,7 @@ class BochaSearchProvider(SearchProvider):
     name = "bocha"
 
     def __init__(self) -> None:
-        self._api_key = os.environ["BOCHA_API_KEY"]
+        self._api_key = settings.bocha_api_key
 
     def search(self, query: str, max_results: int) -> list[SearchResult]:
         headers = {
@@ -55,4 +50,4 @@ class BochaSearchProvider(SearchProvider):
 
     @classmethod
     def is_available(cls) -> bool:
-        return bool(os.environ.get("BOCHA_API_KEY"))
+        return bool(settings.bocha_api_key)

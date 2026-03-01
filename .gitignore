@@ -1,2 +1,6 @@
 __pycache__/
 .env
+mcp.json
+dist/
+.venv/
+uv.lock

@@ -1,4 +1,4 @@
-from mcp_web_search.server import run
+from mcp_tool_web_search.server import run
 
 def main():
     run()

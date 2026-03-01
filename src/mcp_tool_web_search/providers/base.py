@@ -8,10 +8,11 @@ from dataclasses import dataclass
 
 @dataclass
 class SearchResult:
-    """单条搜索结果，仅含 URL 和元信息，不含内容。"""
+    """单条搜索结果，仅含 URL 和元信息"""
 
     url: str
     title: str
+    content: str | None = None
     published_date: str | None = None
 
 
