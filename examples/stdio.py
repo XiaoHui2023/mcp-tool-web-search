@@ -58,5 +58,5 @@ async def test_search(query: str = "Python MCP"):
 
 if __name__ == "__main__":
     import sys
-    query = sys.argv[1] if len(sys.argv) > 1 else "炉石传说异灵术"
+    query = sys.argv[1] if len(sys.argv) > 1 else "怎么看待AI技术的发展"
     asyncio.run(test_search(query))
